@@ -1,0 +1,9 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak && sed -i 's|root /app;|root /app/public;|g' /etc/nginx/sites-available/default && nginx -g 'daemon off;' & php-fpm"
+  }
+}
